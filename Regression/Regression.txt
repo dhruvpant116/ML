@@ -1,0 +1,41 @@
+# Regression models:
+-Simple linear reg
+-Multiple linear reg
+-Polynomial reg
+-SVR
+-Decission Tree Regression
+-Random Forest
+
+
+# Simple Linear Regression
+
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression()
+lr.fit(xtr,ytr)
+print(lr.predict(xte))
+print(lr.predict([[12]]))
+print(lr.coef_)
+print(lr.intercept_)
+
+# Multiple Linear Regression
+
+from sklearn.linear_model import LinearRegression
+lr = LinearRegression()
+lr.fit(xtr,ytr)
+y_pred= lr.predict(x_test)
+np.set_printoptions(precision=2)
+np.concatenate((y_pred.reshape(len(y_pred),1), y_test.reshape(len(y_test),-1)),1)
+
+# Polynomial Regression
+
+from sklearn.preprocessing import PolynomialFeatures
+poly = PolynomialFeatures(degree=2)
+x_poly = poly.fit_transform(x)
+lr_poly = LinearRegression()
+lr_poly.fit(x_poly,y)
+plt.scatter(x,y)
+plt.plot(x,lr_poly.predict(poly.fit_transform(x)),color="black")
+
+# SVR
+
+ 
